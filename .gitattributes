@@ -1,2 +1,2 @@
 client/src/assets/* linguist-vendored
-*.css text eol=crlf
+*.css linguist-vendored
