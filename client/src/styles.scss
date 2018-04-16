@@ -1,0 +1,85 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'assets/scss/style.scss';
+
+$c-text: #56606F;
+$back: #F3F6F8;
+
+* {
+    font-family: 'Roboto', sans-serif;
+    color: #209e91;
+}
+
+label,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div {
+    color: $c-text;
+}
+
+
+
+.modal-open {
+    .modal {
+        &.fade {
+            opacity: 1;
+        }
+        &.show {
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            .modal-dialog {
+                animation-name: modal;
+                animation-duration: 1s;
+                transform: translateY(0);
+            }
+        }
+    }
+    .modal-backdrop {
+        &.fade {
+            opacity: 0.5;
+        }
+    }
+}
+
+.modal-title {
+    float: left;
+}
+
+@keyframes modal {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+dropzone>.dropzone.dz-wrapper div.dz-message {
+    min-height: 160px;
+}
+
+.dropzone .dz-preview a.dz-remove {
+    font-size: 0;
+    position: absolute;
+    z-index: 20;
+    top: -2px;
+    right: 8px;
+    cursor: pointer;
+    &:hover{
+        text-decoration: none;
+        &:before{
+            opacity: 0.5;
+        }
+    }
+    &:before {
+        font-size: 18px;
+        content: '×';
+        color: #209e91;
+    }
+}

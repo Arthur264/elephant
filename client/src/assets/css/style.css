@@ -1,0 +1,13 @@
+@import 'bootstrap.min.css';
+@import 'entypo.css';
+@import 'font-awesome.min.css';
+@import 'integral-core.css';
+@import 'integral-forms.css';
+
+.breadcrumb{
+    padding-left: 30px;
+    
+}
+.breadcrumb li strong{
+    color: #434343;
+}

@@ -1,0 +1,29 @@
+.panel-body {
+    padding-top: 0;
+}
+
+.upload-block {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+h1 {
+    padding-left: 12px;
+}
+
+.list-group-item {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.look {
+    margin-right: 10px;
+}
+
+.look , .dowload{
+    transition: all .3s;
+    &:hover{
+        opacity: 0.5;
+    }
+}

@@ -1,0 +1,17 @@
+<ul id="side-nav" class="main-menu navbar-collapse collapse">
+    <li  #box *ngFor='let menuItem of menuItems' [class.has-sub]="menuItem.children">
+        <a *ngIf='!menuItem.children' [routerLink]="menuItem.link">
+            <i class="fa {{menuItem.icon}}"></i>
+            <span class="title">{{menuItem.title}}</span>
+        </a>
+        <a *ngIf='menuItem.children' (click)='openItem($event, box)'>
+            <i class="fa {{menuItem.icon}}"></i>
+            <span class="title">{{menuItem.title}}</span>
+        </a>
+        <ul class="nav collapse" *ngIf='menuItem.children'>
+            <ng-container *ngFor="let item of menuItem.children">
+                <li><a [routerLink]="item.link"><span class="title">{{item.title}}</span></a></li>
+            </ng-container>
+        </ul>
+    </li>
+</ul>

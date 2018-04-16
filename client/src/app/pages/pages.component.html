@@ -1,0 +1,20 @@
+<div class="page-container">
+    <div class="page-sidebar">
+        <app-aside></app-aside>
+    </div>
+    <div class="main-container">
+        <div class="main-header row">
+            <app-header></app-header>
+        </div>
+        <div class="main-content row">
+            <ol class="breadcrumb">
+                <li><a routerLink=""><i class="fa fa-home"></i>Home</a></li>
+                <li *ngFor="let breadcrumb of breadcrumbs; let i = index">
+                    <a *ngIf='i != breadcrumbs.length' [routerLink]="[breadcrumb.url, breadcrumb.params]">{{ breadcrumb.label }}</a>
+                    <strong *ngIf='i == breadcrumbs.length'>{{ breadcrumb.label }}</strong>
+                </li>
+            </ol>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
