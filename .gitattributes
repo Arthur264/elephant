@@ -1,0 +1,3 @@
+client/src/assets/* linguist-vendored
+*.css linguist-vendored
+client/src/app/auth/auth.component.scss linguist-vendored
