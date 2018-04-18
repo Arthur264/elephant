@@ -55,7 +55,7 @@ export class PagesComponent implements OnInit {
       url += `/${routeURL}`;
 
       //add breadcrumb
-      let breadcrumb: IBreadcrumb = {
+      let breadcrumb: Bredcrumb = {
         label: child.snapshot.data[ROUTE_DATA_BREADCRUMB],
         params: child.snapshot.params,
         url: url

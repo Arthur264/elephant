@@ -14,17 +14,17 @@ export class AppService {
     private getUrl(url){
         return this.hostname + url
     }
-    
+    public getToken(){
+        return this.token
+    }
     public get(url, params = {}) {
         params['format'] = 'json';
         const headers = new Headers({ 'Authorization': 'Token ' + this.token });
-        const options = new RequestOptions({params: params });
+        const options = new RequestOptions({params: params, headers: headers });
         return this.http.get(this.getUrl(url), options)
             .map((res: Response) => res.json());
             
     }
-
-
     public post(url, data) {
         const headers = new Headers({ 'Content-Type': 'application/json'});
         const options = new RequestOptions({ headers: headers });

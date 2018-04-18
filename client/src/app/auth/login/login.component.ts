@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 
 export class LoginComponent implements OnInit {
   public login: FormGroup;
-  public error_message: any[];
+  public error_message: string;
   constructor(private appService: AppService, private authService: AuthService, private router: Router) {
     this.login = new FormGroup({
       username: new FormControl('', [Validators.required]),
@@ -37,7 +37,6 @@ export class LoginComponent implements OnInit {
       li.innerHTML = Object.values(data)[0];
       list.appendChild(li)
     })
-    console.log(list)
     tmp.appendChild(list);
     return tmp.innerHTML;
   }

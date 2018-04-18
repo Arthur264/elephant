@@ -12,14 +12,13 @@ import { HeaderComponent } from './header/header.component';
 import { NgbModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { DatasetComponent } from './dataset/dataset.component';
 import { MydatasetComponent } from './dataset/mydataset/mydataset.component';
-import { ModalComponent } from './dataset/mydataset/modal/modal.component';
 import { DropzoneModule } from 'ngx-dropzone-wrapper';
 import { DROPZONE_CONFIG } from 'ngx-dropzone-wrapper';
 import { DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
+import { DatasetListFile } from './dataset/mydataset/mydataset-host.component';
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   url: 'http://elephant-artyr264.c9users.io:8081/api/v1/dataset/',
-  maxFilesize: 50,
   maxFilesize: 20480,
   addRemoveLinks: true,
   method: 'post',
@@ -52,7 +51,7 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
         component: DatasetComponent,
         data: {
           breadcrumb: "Datasets"
-        }
+        },
         children: [{
           path: '',
           component: MydatasetComponent
@@ -71,7 +70,7 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     AsideMenuComponent,
     DatasetComponent,
     MydatasetComponent,
-    ModalComponent
+    DatasetListFile
   ],
   providers: [{
     provide: DROPZONE_CONFIG,

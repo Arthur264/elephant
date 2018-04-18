@@ -1,0 +1,9 @@
+<ng-container *ngFor="let item of files">
+    <div class="list-group-item">
+        <div><span [ngClass]="ParseTypeFile(item.type)"></span>{{ item.name }}</div>
+        <div>
+            <a class='look' href="#"><span class="fa fa-eye"></span></a>
+            <a class='dowload' href='{{item.file}}' target="_self" download><span class="fa fa-cloud-download-alt"></span></a>
+        </div>
+    </div>
+</ng-container>
