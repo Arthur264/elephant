@@ -10,16 +10,8 @@ export class MainComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log("ma")
+    console.log("main")
   }
   
-  public fileUpload(event){
-    let file = event.target.files[0];
-    if(file.length > 0){
-      let formData = new FormData();
-      formData.append('file', file, file.name)
-      
-    }
-  }
 
 }

@@ -4,11 +4,11 @@
 	<ul class="user-info pull-left">
 		<li class="profile-info dropdown" ngbDropdown>
 			<a ngbDropdownToggle class="dropdown-toggle" aria-expanded="false">
-				<img width="44" class="img-circle avatar" alt="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeVcxGh0tTonm4FMNY0a4iGL8rlqmV9qEc-JxzVjgHrGgJEWdd">John Henderson <span class="caret"></span>
+				<img width="44" class="img-circle avatar" alt="" src="{{user.avatar}}">{{user.firstname}} {{user.lastname}}<span class="caret"></span>
 			</a>
 			<!-- User action menu -->
 			<ul class="dropdown-menu" ngbDropdownMenu>
-				<li><a href="#/"><i class="icon-user"></i>My profile</a></li>
+				<li><a [routerLink]="['/pages/settings']"><i class="icon-user"></i>My profile</a></li>
 				<li><a href="#/"><i class="icon-mail"></i>Messages</a></li>
 				<li><a href="#"><i class="icon-clipboard"></i>Tasks</a></li>
 				<li class="divider"></li>

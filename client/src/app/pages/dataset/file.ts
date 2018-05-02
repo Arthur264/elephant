@@ -3,5 +3,6 @@ export interface File {
     user: number,
     type: string,
     name: string,
-    file: string
+    file: string,
+    data?: any,
 }

@@ -13,10 +13,19 @@ export class DatasetListFile {
 
     }
     public ParseTypeFile(type) {
-        console.log(type)
         switch (type) {
             case "text/csv":
                 return 'icon-csv-file-format-extension'
+            case "application/sql":
+                return 'icon-sql-file-format-symbol'
+            case "application/zip":
+                return 'icon-zip-compressed-files-extension'
+            case 'application/pdf':
+                return 'icon-pdf-file'
+            case 'text/plainf':
+                return 'icon-txt-text-file-extension-symbol'
+            default:
+                return 'icon-blank-file'
         }
     }
 }

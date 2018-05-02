@@ -1,0 +1,30 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12" appLoader>
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">{{details.name}}</h4>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th *ngFor='let head of details.data.headers'>{{head}}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor='let body of details.data.body; let i = index'>
+                                    <td>{{i+1}}</td>
+                                    <td *ngFor='let bodytext of body'>{{bodytext}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -71,9 +71,9 @@ dropzone>.dropzone.dz-wrapper div.dz-message {
     top: -2px;
     right: 8px;
     cursor: pointer;
-    &:hover{
+    &:hover {
         text-decoration: none;
-        &:before{
+        &:before {
             opacity: 0.5;
         }
     }
@@ -81,5 +81,29 @@ dropzone>.dropzone.dz-wrapper div.dz-message {
         font-size: 18px;
         content: '×';
         color: #209e91;
+    }
+}
+
+#preload {
+    position: absolute;
+    display: block;
+    top: 50%;
+    width: 80px;
+    height: 80px;
+    right: 50%;
+    transform: translate(0, -50%);
+}
+
+.preload-container {
+    position: relative;
+    &:before {
+        display: block;
+        border-radius: 4px;
+        width: calc(100% - 30px);
+        height: calc(100% - 30px);
+        background: white;
+        content: "";
+        position: absolute;
+        left: 15px;
     }
 }

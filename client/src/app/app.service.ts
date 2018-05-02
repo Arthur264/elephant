@@ -26,7 +26,7 @@ export class AppService {
             
     }
     public post(url, data) {
-        const headers = new Headers({ 'Content-Type': 'application/json'});
+        const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': 'Token ' + this.token});
         const options = new RequestOptions({ headers: headers });
         return this.http.post(this.hostname + url, data, options)
             .map((res: Response) => res.json());

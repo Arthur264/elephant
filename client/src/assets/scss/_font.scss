@@ -24,6 +24,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-txt-text-file-extension-symbol:before {
+  content: "\eaf7";
+}
+.icon-blank-file:before {
+  content: "\eaf8";
+}
+.icon-zip-compressed-files-extension:before {
+  content: "\eaf9";
+}
 .icon-csv-file-format-extension:before {
   content: "\eaf6";
 }
@@ -1546,3 +1555,4 @@
 .icon-IcoMoon:before {
   content: "\eaf4";
 }
+

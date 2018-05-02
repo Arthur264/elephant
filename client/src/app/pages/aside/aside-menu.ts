@@ -9,15 +9,11 @@ export const MENU_ITEMS: AsideMenuInterface[] = [
   {
     title: 'Posts',
     icon: 'fa-clipboard',
-    link: '/pages/posts',
+    link: '/pages/post',
     children: [
        {
         title: 'All Posts',
-        link: '/pages/posts/all',
-      },
-      {
-        title: 'Create new posts',
-        link: '/pages/posts/create',
+        link: '/pages/post/',
       }
     ],
   },{
@@ -30,5 +26,5 @@ export const MENU_ITEMS: AsideMenuInterface[] = [
         link: '/pages/datasets/',
       }
     ],
-  }
+  },
 ];

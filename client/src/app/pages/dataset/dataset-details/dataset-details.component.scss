@@ -1,0 +1,10 @@
+.title {
+    &::first-letter {
+        font-size: 150%;
+        text-transform: uppercase;
+    }
+}
+
+.card .content {
+    max-height: 385px;
+}

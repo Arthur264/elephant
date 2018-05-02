@@ -1,0 +1,110 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="content">
+                        <form [formGroup]="settings" (ngSubmit)="Settings(settings)">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>Company (disabled)</label>
+                                        <input formControlName="company" name='company' class="form-control" placeholder="Company" type="text" value="Creative Code Inc.">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Username</label>
+                                        <input formControlName="username" name='username'  class="form-control" placeholder="Username" type="text" value="michael23" request>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email address</label>
+                                        <input formControlName="email" name='email' class="form-control" placeholder="Email" type="email" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>First Name</label>
+                                        <input formControlName="firstname" name='firstname' class="form-control" placeholder="Company" type="text" value="Mike" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Last Name</label>
+                                        <input formControlName="lastname" name='lastname' class="form-control" placeholder="Last Name" type="text" value="Andrew" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Address</label>
+                                        <input formControlName="address" name='address' class="form-control" placeholder="Home Address" type="text" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>City</label>
+                                        <input formControlName="city" name='city' class="form-control" placeholder="City" type="text" value="Mike">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Country</label>
+                                        <input formControlName="country" name='country' class="form-control" placeholder="Country" type="text" value="Andrew">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Postal Code</label>
+                                        <input formControlName="postcode" name='postcode' class="form-control" placeholder="ZIP Code" type="number">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>About Me</label>
+                                        <textarea formControlName="description" name='description' class="form-control" placeholder="Here can be your description" rows="5" value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-info btn-fill pull-right" type="submit">Update Profile</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-user">
+                    <div class="image">
+                        <img alt="..." src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&amp;fm=jpg&amp;h=300&amp;q=75&amp;w=400">
+                    </div>
+                    <div class="content">
+                        <div class="author">
+                            <a href="#">
+                                <img  alt="..." class="avatar border-gray" src="{{user.avatar}}">
+
+                                <h4  class="title">{{user.firstname}} {{user.lastname}}<br >
+                                    <small>{{user.username}}</small>
+                                </h4>
+                            </a>
+                        </div>
+                        <p  class="description text-center"> {{user.description}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

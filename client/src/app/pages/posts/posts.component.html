@@ -1,3 +1,144 @@
-<p>
-  posts works!
-</p>
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Create New Post</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="createPost">
+            <div class="form-group">
+                <label for="inputTitle">Title</label>
+                <input formControlName="title" name="title" id="inputTitle" placeholder="Title" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="inputText">Text</label>
+                <app-tiny-editor [elementId]="'inputText'" (onEditorContentChange)="changeEditor($event)"></app-tiny-editor>
+            </div>
+            <div class="form-group">
+                <label for="inputCategory">Category</label>
+                <select formControlName="category" name="category" class="form-control" id="inputCategory">
+                  <option *ngFor="let c of category" [value]="c.name">{{c.name}}</option>
+                </select>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input formControlName="draft" name="draft" id="inputDraft" type="checkbox">Draft
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="inputImage">Image</label>
+                <input formControlName="image" name="image" type="file" id="inputImage" (change)="onChangeFile($event)" class="form-control" multiple>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" (click)="save(createPost)">Save</button>
+        <button type="button" class="btn btn-success" (click)="c('Close click')">Close</button>
+    </div>
+</ng-template>
+
+<div class="fm">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8">
+
+            </div>
+            <div class="col-sm-4 create-block">
+                <div class="row">
+                    <div class="btn-group btn-group-toggle ">
+                        <button ngbButtonLabel class="btn-light" (click)='openUploadFile(content)'>
+                          <span class="icon-plus-sign-in-circle"></span>
+                          Create new
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul class="ca bow box afo">
+        <li class="rv b agz">
+            <img class="bos vb yb aff" src="https://cdn-images-1.medium.com/fit/c/120/120/0*pBRBvF1YRNeE2f50.jpeg">
+            <div class="rw">
+                <div class="bpb">
+                    <small class="acx axc">4 min</small>
+                    <h6>Dave Gamache</h6>
+                </div>
+                <p>
+                    Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis
+                    euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                </p>
+                <div class="boy" data-grid="images">
+                    <div style="display: inline-block; margin-bottom: 10px; margin-right: 10px; vertical-align: bottom;">
+                        <img data-action="zoom" data-width="1050" data-height="700" src="assets/img/unsplash_1.jpg" style="width: 273px; height: 182px;">
+                    </div>
+                    <div style="display: inline-block; margin-bottom: 10px; margin-right: 0px; vertical-align: bottom;">
+                        <img data-action="zoom" data-width="640" data-height="640" src="assets/img/instagram_1.jpg" style="width: 182px; height: 182px;">
+                    </div>
+                    <div style="display: inline-block; margin-bottom: 10px; margin-right: 10px; vertical-align: bottom;">
+                        <img data-action="zoom" data-width="640" data-height="640" src="assets/img/instagram_13.jpg" style="width: 181px; height: 182px;">
+                    </div>
+                    <div style="display: inline-block; margin-bottom: 10px; margin-right: 0px; vertical-align: bottom;">
+                        <img data-action="zoom" data-width="1048" data-height="700" src="assets/img/unsplash_2.jpg" style="width: 274px; height: 182px;">
+                    </div>
+                </div>
+
+                <ul class="bow afa">
+                    <li class="rv afh">
+                        <img class="bos vb yb aff" src="https://cdn-images-1.medium.com/fit/c/120/120/0*pBRBvF1YRNeE2f50.jpeg">
+                        <div class="rw">
+                            <strong>Jacon Thornton: </strong> Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo
+                            cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis.
+                        </div>
+                    </li>
+                    <li class="rv">
+                        <img class="bos vb yb aff" src="https://cdn-images-1.medium.com/fit/c/120/120/0*pBRBvF1YRNeE2f50.jpeg">
+                        <div class="rw">
+                            <strong>Mark Otto: </strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="rv b agz">
+            <img class="bos vb yb aff" src="https://cdn-images-1.medium.com/fit/c/120/120/0*pBRBvF1YRNeE2f50.jpeg">
+            <div class="rw">
+                <div class="bpd">
+                    <div class="bpb">
+                        <small class="acx axc">12 min</small>
+                        <h6>Jacob Thornton</h6>
+                    </div>
+                    <p>
+                        Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac, vestibulum
+                        at eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                </div>
+            </div>
+        </li>
+        <li class="rv b agz">
+            <img class="bos vb yb aff" src="https://cdn-images-1.medium.com/fit/c/120/120/0*pBRBvF1YRNeE2f50.jpeg">
+            <div class="rw">
+                <div class="bpb">
+                    <small class="acx axc">34 min</small>
+                    <h6>Mark Otto</h6>
+                </div>
+
+                <p>
+                    Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                </p>
+
+                <div class="boy" data-grid="images"><img style="display: inline-block; width: 466px; height: 451px; margin-bottom: 10px; margin-right: 0px; vertical-align: bottom;" data-width="640" data-height="640" data-action="zoom" src="assets/img/instagram_3.jpg"></div>
+
+                <ul class="bow">
+                    <li class="rv">
+                        <img class="bos vb yb aff" src="https://cdn-images-1.medium.com/fit/c/120/120/0*pBRBvF1YRNeE2f50.jpeg">
+                        <div class="rw">
+                            <strong>Dave Gamache: </strong> Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus
+                            magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>
